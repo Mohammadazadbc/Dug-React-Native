@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import { StyleSheet, SafeAreaView, View, ScrollView } from 'react-native';
+import Home from './linkSocialMedia/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './StackNavigator';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+
+    // <ScrollView style={{height:"100%"}}> 
+
+    // <SafeAreaView style={styles.container}>
+    //     <Home />
+    // </SafeAreaView>
+    // </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    width:"100%",
+    backgroundColor: '#E5E5E5',
     alignItems: 'center',
-    justifyContent: 'center',
+    
+
   },
 });
