@@ -11,7 +11,7 @@ export default function Linked() {
         <View style={styles.socialIconsContainer}>
                 <View style={styles.socialIcon}>
                         <View style={styles.iconsName}>
-                            <Image style={{width:30, height:30, borderRadius: "50%"}} source={require('../assets/facebook.png')} />
+                            <Image style={{width:30, height:30, borderRadius: 100 /2}} source={require('../assets/facebook.png')} />
                             <Text style={styles.iconTitle}>Facebook</Text>
                         </View>
                         <View style={styles.linkIcons}>
@@ -22,7 +22,7 @@ export default function Linked() {
 
                 <View style={styles.socialIcon}>
                         <View style={styles.iconsName}>
-                            <Image style={{width:30, height:30, borderRadius: "50%"}} source={require('../assets/google.png')} />
+                            <Image style={{width:30, height:30, borderRadius: 100 /2}} source={require('../assets/google.png')} />
                             <Text style={styles.iconTitle}>Google</Text>
                         </View>
                         <View style={styles.linkIcons}>
@@ -33,7 +33,7 @@ export default function Linked() {
 
                 <View  style={styles.socialIcon}>
                         <View  style={styles.iconsName}>
-                            <Image  style={{width:30, height:30, borderRadius: "50%"}} source={require('../assets/calendar.png')} />
+                            <Image  style={{width:30, height:30, borderRadius: 100 /2}} source={require('../assets/calendar.png')} />
                             <Text onPress={()=>navigation.navigate("Calendar")} style={styles.iconTitle}>Calendar</Text>
                         </View>
                         <View style={styles.linkIcons}>
@@ -44,7 +44,7 @@ export default function Linked() {
 
                 <View style={styles.socialIcon}>
                         <View style={styles.iconsName}>
-                            <Image style={{width:30, height:30, borderRadius: "50%"}} source={require('../assets/slack.png')} />
+                            <Image style={{width:30, height:30, borderRadius: 100 /2}} source={require('../assets/slack.png')} />
                             <Text style={styles.iconTitle}>Slack</Text>
                         </View>
                         <View style={styles.linkIcons}>
@@ -54,7 +54,7 @@ export default function Linked() {
                 </View>
                 <View style={styles.socialIcon}>
                         <View style={styles.iconsName}>
-                            <Image style={{width:30, height:30, borderRadius: "50%"}} source={require('../assets/paypal.png')} />
+                            <Image style={{width:30, height:30, borderRadius: 100 /2}} source={require('../assets/paypal.png')} />
                             <Text style={styles.iconTitle}>PayPal</Text>
                         </View>
                         <View style={styles.linkIcons}>
