@@ -88,6 +88,7 @@ export default function All() {
 
 
     </View>
+  
    
   )
 }
@@ -95,6 +96,8 @@ export default function All() {
 const styles = StyleSheet.create({
   contianer:{
     width:"100%",
+    height: 900,
+    paddingHorizontal: 10
   },
   socialMedia:{
     width:"100%",

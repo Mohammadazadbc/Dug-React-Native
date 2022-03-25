@@ -61,8 +61,9 @@ export default function Home() {
 const styles = StyleSheet.create({
     container:{
         width:"100%",
-        padding: 10,
-        height: 950
+        height: 950,
+        backgroundColor: '#E5E5E5',
+        
     },
     
     navBar:{

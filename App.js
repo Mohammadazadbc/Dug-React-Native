@@ -6,25 +6,10 @@ import StackNavigator from './StackNavigator';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <StackNavigator />
     </NavigationContainer>
-
-    // <ScrollView style={{height:"100%"}}> 
-
-    // <SafeAreaView style={styles.container}>
-    //     <Home />
-    // </SafeAreaView>
-    // </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    width:"100%",
-    backgroundColor: '#E5E5E5',
-    alignItems: 'center',
-    
 
-  },
-});

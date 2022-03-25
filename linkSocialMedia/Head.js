@@ -37,11 +37,12 @@ export default function Head({menuItemNumber}) {
 const styles = StyleSheet.create({
     contianer:{
         width:"100%",
-        flexDirection:'row'
+        flexDirection:'row',
+        paddingHorizontal:10
     },
     image1:{
         width:"90%",
         height: 170,
-         borderRadius:15
+        borderRadius:15
     }
 })

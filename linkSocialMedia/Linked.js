@@ -71,7 +71,8 @@ export default function Linked() {
 
 const styles = StyleSheet.create({
     container:{
-        width:"100%"
+        width:"100%",
+        paddingHorizontal: 10
     },
     title:{
         fontSize:17,
