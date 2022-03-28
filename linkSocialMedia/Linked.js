@@ -1,6 +1,8 @@
-import { StyleSheet, Text, View , Image} from 'react-native'
+import { StyleSheet, Text, View , Image, TouchableOpacity} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import React from 'react'
+import Footer from './Footer';
+
 
 export default function Linked() {
     const navigation = useNavigation();
@@ -30,17 +32,19 @@ export default function Linked() {
 
                         </View>
                 </View>
+                <TouchableOpacity onPress={()=>navigation.navigate("Calendar")}>
 
                 <View  style={styles.socialIcon}>
                         <View  style={styles.iconsName}>
                             <Image  style={{width:30, height:30, borderRadius: 100 /2}} source={require('../assets/calendar.png')} />
-                            <Text onPress={()=>navigation.navigate("Calendar")} style={styles.iconTitle}>Calendar</Text>
+                            <Text  style={styles.iconTitle}>Calendar</Text>
                         </View>
                         <View style={styles.linkIcons}>
                         <Image style={{width:19, height:19}}  source={require('../assets/link.png')}/>
 
                         </View>
                 </View>
+                </TouchableOpacity>
 
                 <View style={styles.socialIcon}>
                         <View style={styles.iconsName}>
@@ -63,7 +67,9 @@ export default function Linked() {
                         </View>
                 </View>
         </View>
-        
+        <View>
+            <Footer/>
+        </View>
 
     </View>
   )
@@ -72,7 +78,8 @@ export default function Linked() {
 const styles = StyleSheet.create({
     container:{
         width:"100%",
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        height:500
     },
     title:{
         fontSize:17,

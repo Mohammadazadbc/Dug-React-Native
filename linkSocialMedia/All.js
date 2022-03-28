@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
-
+import Footer from './Footer';
 export default function All() {
   return (
   
@@ -85,7 +85,9 @@ export default function All() {
       </View>
 
       
-
+      <View style={styles.footerView}>
+            <Footer />
+        </View>
 
     </View>
   
@@ -96,7 +98,7 @@ export default function All() {
 const styles = StyleSheet.create({
   contianer:{
     width:"100%",
-    height: 900,
+    height: 650,
     paddingHorizontal: 10
   },
   socialMedia:{

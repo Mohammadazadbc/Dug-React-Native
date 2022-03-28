@@ -1,18 +1,24 @@
-import { StyleSheet, Text, Image, View,ScrollView, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, Image, View,ScrollView, SafeAreaView, TextInput, TouchableWithoutFeedback } from 'react-native'
 import React,{useState} from 'react'
 import Head from './Head';
 import All from './All';
 import Linked from './Linked';
-import Footer from './Footer';
+
+
 
 
 
 
 export default function Home() {
     const [menuItemNumber, setMenuItemNumber] = useState(1);
-
+    const [showSearch, setShowSearch] = useState(false)
+;
     const handleMenuItem = (index)=>{
             setMenuItemNumber(index)
+    }
+    const showTextInput= ()=>{
+        setShowSearch(!showSearch)
+        console.log(showSearch);
     }
   return (
       <ScrollView>  
@@ -20,28 +26,33 @@ export default function Home() {
            
       <View style={styles.navBar} >
       <Image  style={{ height: 25, width: 34}} source={require("../assets/lef.png")} />
-      <Image  style={{ height: 25, width: 34}}  source={require("../assets/search.png")} />
+      <TextInput style={ showSearch ? styles.showTextInput : styles.textInput} placeholder="Search..." />
+      <TouchableWithoutFeedback onPress={showTextInput}>
+      <Image   style={{ height: 25, width: 34}}  source={require("../assets/search.png")} />
+
+      </TouchableWithoutFeedback>
             
       </View>
     
         <View style={styles.navBarMenu}>
                 
-       
-                    <Text onPress={()=>handleMenuItem(4)} style={ menuItemNumber ===4 ? [styles.menuItem, styles.MenuActive] : styles.menuItem}  >New</Text>
-             
+                    <View  style={ menuItemNumber ===4 ? [styles.menuItem, styles.MenuActive] : styles.menuItem} >
 
-             
-                    <Text onPress={()=>handleMenuItem(3)} style={ menuItemNumber ===3 ? [styles.menuItem, styles.MenuActive] : styles.menuItem}  >Top</Text>
-               
+                        <Text style={ menuItemNumber ===4 ? styles.pActive :"" } onPress={()=>handleMenuItem(4)}   >New</Text>
+                        </View>
+                    
+                        <View  style={ menuItemNumber ===3 ? [styles.menuItem, styles.MenuActive] : styles.menuItem}>
+                            <Text style={ menuItemNumber ===3 ? styles.pActive :"" }  onPress={()=>handleMenuItem(3)}  >Top</Text>
 
-            
-
-            
-                    <Text onPress={()=>handleMenuItem(2)}  style={ menuItemNumber ===2 ? [styles.menuItem, styles.MenuActive] : styles.menuItem}  >Linked</Text>
-               
-
+                        </View>
                 
-                    <Text onPress={()=>handleMenuItem(1)} style={ menuItemNumber ===1 ? [styles.menuItem, styles.MenuActive] : styles.menuItem} >All</Text>
+                        <View   style={ menuItemNumber ===2 ? [styles.menuItem, styles.MenuActive] : styles.menuItem}>
+                                <Text style={ menuItemNumber ===2 ? styles.pActive :"" } onPress={()=>handleMenuItem(2)}  >Linked</Text>
+                        </View>
+                        
+                        <View   style={ menuItemNumber ===1 ? [styles.menuItem, styles.MenuActive] : styles.menuItem}>
+                            <Text style={ menuItemNumber ===1 ? styles.pActive :"" } onPress={()=>handleMenuItem(1)}  >All</Text>
+                        </View>
               
         </View>
         <Head menuItemNumber={menuItemNumber} />
@@ -49,10 +60,9 @@ export default function Home() {
         <View>
             { menuItemNumber == 2 ? <Linked/> : <All/>  }
             
-            
         </View>
 
-        <Footer />
+       
     </SafeAreaView>
     </ScrollView>
   )
@@ -60,8 +70,8 @@ export default function Home() {
 
 const styles = StyleSheet.create({
     container:{
+        position: 'relative',
         width:"100%",
-        height: 950,
         backgroundColor: '#E5E5E5',
         
     },
@@ -69,6 +79,8 @@ const styles = StyleSheet.create({
     navBar:{
         flexDirection: 'row',
         width:"100%",
+        paddingHorizontal: 5,
+        paddingTop:5,
         justifyContent: 'space-between',
         
         
@@ -88,14 +100,32 @@ const styles = StyleSheet.create({
         textAlign:'center',
         height:35,
         alignItems:'center',
-        paddingTop:5,
+        paddingTop:8,
+
 
     },
     MenuActive :{
-        fontWeight:'bold',
         backgroundColor:"#EEEEEE",
         width:"100%",
         height:"100%",
+        borderRadius: 10,
+        alignItems:'center'
+    },
+    pActive:{
+        fontWeight: 'bold'
+    },
+
+    textInput:{
+         display: 'none'
+    },
+    showTextInput:{
+        height: 30,
+        backgroundColor: 'white',
+         fontSize: 15, width:300,
+         padding:3,
+         borderRadius:5,
+        
     }
+    
 
 })

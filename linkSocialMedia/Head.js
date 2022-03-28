@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     contianer:{
         width:"100%",
         flexDirection:'row',
-        paddingHorizontal:10
+        paddingHorizontal:15,
     },
     image1:{
         width:"90%",

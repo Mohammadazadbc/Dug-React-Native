@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     container:{
         width:"100%",
         alignItems:'center',
-        height: 800
+        height: 750
     },
     topIcons:{
         width: "100%",
@@ -115,9 +115,9 @@ const styles = StyleSheet.create({
         
     },
     btnContainer:{
-        position:'relative',
+        position:'absolute',
         width: "90%",
-        marginTop: 50,
+        bottom:30,
         alignItems:'flex-end',
         
        
@@ -126,7 +126,8 @@ const styles = StyleSheet.create({
         width: 187,
         height: 49,
         backgroundColor:  "#0A1931",  
-        borderRadius: 10
+        borderRadius: 10,
+        
     },
     btn:{ 
         color: "white",
